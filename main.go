@@ -47,7 +47,7 @@ func makeHello(logger chan string) func(http.ResponseWriter, *http.Request) {
 			log.Println(err)
 			return
 		}
-		string := fmt.Sprint("id: ", t.Ip, "info: ", t.Json)
+		string := fmt.Sprintf("ip: *%v* json *%v*", t.Ip, t.Json)
 				fmt.Println("Отправил в логгер")
 		select {
 		case  <-logger:
